@@ -37,7 +37,7 @@ const CheckoutCart = ({ cartTotal, cartItems, onSuccess }) => {
 
     try {
       // Send cart total, cart items, and address to your backend
-      const response = await fetch('https://auraleathers-peach.vercel.app//create-order', {
+      const response = await fetch('https://leathersbck.vercel.app/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -66,7 +66,7 @@ const CheckoutCart = ({ cartTotal, cartItems, onSuccess }) => {
         handler: async function (response) {
           // 1. The payment succeeded on the frontend. Now, send proof to the backend!
           try {
-            const verifyRes = await fetch('https://auraleathers-peach.vercel.app//verify-payment', {
+            const verifyRes = await fetch('https://leathersbck.vercel.app/verify-payment', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
