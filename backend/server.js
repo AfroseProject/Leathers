@@ -108,7 +108,9 @@ const Inquiry = mongoose.model('Inquiry', inquirySchema);
 
 // Configure Email Transporter (Nodemailer)
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // You can change this if you are using Outlook/Yahoo
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false, // Must be false for port 587
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS 
