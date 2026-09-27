@@ -57,7 +57,7 @@ const CheckoutCart = ({ cartTotal, cartItems, onSuccess }) => {
 
       // Open the Razorpay Payment Window
       const options = {
-        key: 'rzp_test_TfQho3PwfWWX6K', // IMPORTANT: Put your Razorpay Test Key here
+        key: import.meta.env.VITE_RAZORPAY_KEY_ID, // IMPORTANT: Put your Razorpay Test Key here
         amount: data.order.amount,
         currency: data.order.currency,
         name: 'Aura Leather',
