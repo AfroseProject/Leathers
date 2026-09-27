@@ -20,7 +20,7 @@ export default function CustomerPortal() {
     e.preventDefault();
     setStatus('Sending code...');
     try {
-      const res = await fetch('http://localhost:5000/api/auth/send-otp', {
+      const res = await fetch('http://leathers.onrender.com/api/auth/send-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
@@ -42,7 +42,7 @@ export default function CustomerPortal() {
     e.preventDefault();
     setStatus('Verifying...');
     try {
-      const res = await fetch('http://localhost:5000/api/auth/verify-otp', {
+      const res = await fetch('http://leathers.onrender.com/api/auth/verify-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp })
@@ -63,7 +63,7 @@ export default function CustomerPortal() {
   // Fetch Order History
   const fetchOrders = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/my-orders', {
+      const res = await fetch('http://leathers.onrender.com/api/my-orders', {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('customerToken')}` }
       });
       const data = await res.json();
